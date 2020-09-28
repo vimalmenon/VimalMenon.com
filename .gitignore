@@ -1,0 +1,9 @@
+### VS Code ###
+.vscode/*
+.mvn/
+
+
+node_modules
+coverage
+/public/*
+package-lock.json
