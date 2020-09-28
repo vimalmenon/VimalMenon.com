@@ -1,11 +1,10 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom";
 
-const value:string = "Vimal Menon";
+import Page from "./page";
+
 
 ReactDOM.render(
-	<div>
-        {value}
-    </div>,
+	<Page />,
 	document.getElementById("main"),
 );

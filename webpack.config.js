@@ -20,7 +20,7 @@ module.exports = {
     },
     module: {
         rules: [
-            /*{
+            {
                 test: /\.ts(x?)$/,
                 enforce: 'pre',
                 use: [
@@ -33,7 +33,7 @@ module.exports = {
                   },
                 ],
                 exclude: /node_modules/,
-            },*/
+            },
             {
                 test: /\.ts(x?)$/,
                 exclude: /node_modules/,

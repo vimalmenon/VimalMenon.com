@@ -9,9 +9,12 @@
         "removeComments": false,
         "moduleResolution": "node",
         "preserveConstEnums": true,
+        "esModuleInterop" : true,
         "baseUrl": "./",
-        "types": [],
-        "typeRoots" : [],
+        "types": [
+            "@types/jest"
+        ],
+        "typeRoots" : ["assets/typings"],
         "paths": {
         }
     }
