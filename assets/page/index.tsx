@@ -1,16 +1,17 @@
 import React from "react";
 
+import { Provider } from "react-redux";
 
 import store from "../store";
 
 
-console.log(store);
-
 const Page:React.FC<INoPropsComponent> = () => {
 	return (
-		<div>
-			This is vimal Menon
-		</div>
+		<Provider store={store}>
+			<div>
+				This is vimal Menon
+			</div>
+		</Provider>
 	);
 };
 
