@@ -36,7 +36,9 @@
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   },
   "jestWebpackResolver": {
     "webpackConfig": "./webpack.config.js"
