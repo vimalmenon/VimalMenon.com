@@ -12,9 +12,8 @@ const Admin = () => {
 						<div>
 							This is admin page
 						</div>
-					)
+					);
 				}} />
-			
 		</div>
 	);
 };
