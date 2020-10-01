@@ -7,6 +7,7 @@ const MetaData:React.FC<IMetaData> = ({title}) => {
 		<Helmet>
 			<meta charSet="utf-8" />
 			<title>{title}</title>
+			<meta name="description" content="Nested component" />
 		</Helmet>
 	); 
 };

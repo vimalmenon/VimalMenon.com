@@ -1,4 +1,4 @@
-interface IActions<T> {
+interface IAction<T> {
     type:string;
     payload:T
 }

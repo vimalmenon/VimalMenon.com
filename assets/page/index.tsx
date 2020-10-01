@@ -1,15 +1,22 @@
 import React from "react";
-import { Provider, connect } from "react-redux";
+import { Provider } from "react-redux";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route
+} from "react-router-dom";
+
+import loadable from "@loadable/component";
 
 import store from "../store";
+import User from "./user";
+
+
+
+const Admin = loadable(() => import( /* webpackChunkName: "admin" */ /* webpackMode: "lazy" */ "./admin"));
+/*
 import actions from "../store/actions";
-
-import {MetaData} from "../component";
-
-console.log(actions);
-
 const OtherPage = ({session, action}) => {
-	console.log(session);
 	return (
 		<div>
 			<MetaData title="Vimal Menon" />
@@ -38,12 +45,17 @@ const mapActionsToProps = ():IDispatchProps => {
 	};
 };
 
-const OtherPageHOC = connect<IStateProps, IDispatchProps, INoPropsComponent, IState>(mapStateToProps, mapActionsToProps)(OtherPage);
-
-const Page:React.FC<INoPropsComponent> = () => {
+const OtherPageHOC = connect<IStateProps, IDispatchProps, IEmptyObject, IState>(mapStateToProps, mapActionsToProps)(OtherPage);
+*/
+const Page:React.FC<IEmptyObject> = () => {
 	return (
 		<Provider store={store}>
-			<OtherPageHOC />
+			<Router>
+				<Switch>
+					<Route path="/admin" component={Admin} />
+					<Route path="/" component={User} />
+				</Switch>
+			</Router>
 		</Provider>
 	);
 };
