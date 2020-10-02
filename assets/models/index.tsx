@@ -1,6 +1,9 @@
-import {mainNavigations, navigationByUrl} from "./navigations";
+import navigations from "./navigations";
+import storage from "./storage";
+import apis from "./apis";
 
 export {
-    mainNavigations,
-    navigationByUrl
+    navigations,
+    storage,
+    apis
 } 

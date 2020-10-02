@@ -23,7 +23,7 @@ const navigationByUrl:{[x:string]:INavigation} = {
     [admin.url]:admin,
     [PrivacyPolicy.url]:PrivacyPolicy
 };
-export {
+export default {
     mainNavigations,
     adminNavigations,
     navigationByUrl

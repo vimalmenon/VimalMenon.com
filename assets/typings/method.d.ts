@@ -1,8 +1,8 @@
 type IVoidNoParamMethod = ()=>void;
 type IVoidOneParamMethod<T> = (value:T)=>void;
 
-type IReturnNoParamMehod<K> = ()=>K;
-type IReturnOneParamMehod<T, K> = (value:T)=>K;
+type IReturnNoParamMethod<K> = ()=>K;
+type IReturnOneParamMethod<T, K> = (value:T)=>K;
 
 type IBlankMethod = ()=>{};
 
