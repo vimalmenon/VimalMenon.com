@@ -8,6 +8,8 @@ import {
 
 import loadable from "@loadable/component";
 import {Spinner} from "react-redux-spinner";
+import { ToastProvider } from "react-toast-notifications";
+
 
 import store from "../store";
 import User from "./user";
@@ -54,13 +56,17 @@ const Page:React.FC<IEmptyObject> = () => {
 	console.dir(Spinner);
 	return (
 		<Provider store={store}>
-			<Spinner config={{}}/>
-			<Router>
-				<Switch>
-					<Route path="/admin" component={Admin} />
-					<Route path="/" component={User} />
-				</Switch>
-			</Router>
+			<ToastProvider 
+				autoDismiss
+				autoDismissTimeout={3000}>
+				<Spinner config={{}}/>
+				<Router>
+					<Switch>
+						<Route path="/admin" component={Admin} />
+						<Route path="/" component={User} />
+					</Switch>
+				</Router>
+			</ToastProvider>
 		</Provider>
 	)
 };

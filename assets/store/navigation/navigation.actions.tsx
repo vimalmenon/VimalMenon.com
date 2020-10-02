@@ -7,7 +7,6 @@ export class SetSelectedNavigation implements IAction<INavigation>{
 	constructor(data: INavigation) {
 		this.payload = data;
 	}
-
 }
 
 export default {

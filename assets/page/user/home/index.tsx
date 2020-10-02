@@ -7,6 +7,9 @@ const Home = () => {
 	return (
 		<div>
 			This is home
+			<button>
+				Add Some thing
+			</button>
 		</div>
 	);
 };
