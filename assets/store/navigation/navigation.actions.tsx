@@ -1,4 +1,3 @@
-import { Action } from "redux";
 import navigationTypes from "./navigation.types";
 
 

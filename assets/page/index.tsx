@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import loadable from "@loadable/component";
+import {Spinner} from "react-redux-spinner";
 
 import store from "../store";
 import User from "./user";
@@ -47,9 +48,13 @@ const mapActionsToProps = ():IDispatchProps => {
 
 const OtherPageHOC = connect<IStateProps, IDispatchProps, IEmptyObject, IState>(mapStateToProps, mapActionsToProps)(OtherPage);
 */
+
+
 const Page:React.FC<IEmptyObject> = () => {
+	console.dir(Spinner);
 	return (
 		<Provider store={store}>
+			<Spinner config={{}}/>
 			<Router>
 				<Switch>
 					<Route path="/admin" component={Admin} />
@@ -57,7 +62,7 @@ const Page:React.FC<IEmptyObject> = () => {
 				</Switch>
 			</Router>
 		</Provider>
-	);
+	)
 };
 
 export default Page;

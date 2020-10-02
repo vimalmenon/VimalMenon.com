@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import {
 	Switch,
@@ -9,6 +10,8 @@ import Home from "./home";
 import PageNotFound from "./page-not-found";
 
 const User = () => {
+	//const component = useSelector<IState, number>(state => state.pendingTasks);
+	//console.log(component);
 	return (
 		<Switch>
 			<Route exact path={`/`} component={Home} />

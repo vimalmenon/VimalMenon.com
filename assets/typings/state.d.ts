@@ -11,8 +11,12 @@ interface IComponentSession {
 interface IComponentState {
     [name:string]:IComponentSession;
 }
+interface INotificationState {
+}
 interface IState {
     navigation: INavigationState;
     session: ISessionState;
-    component: IComponentState
+    component: IComponentState;
+    notification: INotificationState;
+    pendingTasks?:number;
 }

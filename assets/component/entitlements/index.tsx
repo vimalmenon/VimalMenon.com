@@ -1,12 +1,20 @@
 import React from "react";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+//import action from "../../store/actions";
 
 const Entitlement:React.FC<IEntitlement> = ({name, render}) => {
 	const session = useSelector<IState, ISessionState>(state => state.session);
+	const component = useSelector<IState, IComponentState>(state => state.component);
+	//const dispatch = useDispatch();
 	const id = session.id;
-	if(id) {
-		return render({write:true, read: true});
+	const componentName = component[name];
+	if(id && componentName){
+		const readWrite = componentName[id];
+		if(readWrite.read) {
+			return render(readWrite);
+		}
 	}
 	return null;
 };
