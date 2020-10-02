@@ -53,7 +53,6 @@ const OtherPageHOC = connect<IStateProps, IDispatchProps, IEmptyObject, IState>(
 
 
 const Page:React.FC<IEmptyObject> = () => {
-	console.dir(Spinner);
 	return (
 		<Provider store={store}>
 			<ToastProvider 
@@ -68,7 +67,7 @@ const Page:React.FC<IEmptyObject> = () => {
 				</Router>
 			</ToastProvider>
 		</Provider>
-	)
+	);
 };
 
 export default Page;

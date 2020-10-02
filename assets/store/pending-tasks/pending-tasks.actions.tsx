@@ -20,6 +20,7 @@ export class StopSpinner implements IAction<number>{
         this[pendingTask] = end;
 	}
 }
+export type SpinnerActionType = StartSpinner|StopSpinner;
 
 export default {
     StartSpinner,

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 import {Entitlement} from "../../component";
 
-const Admin = () => {
+const Admin:React.FC<IBlankMethod> = () => {
 	const location = useLocation();
 	console.log(location);
 	return (
