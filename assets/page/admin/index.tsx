@@ -1,20 +1,25 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 
-import {Entitlement} from "../../component";
+import {Entitlement} from "component";
+
+import Login from "./login";
+import Dashboard from "./dashboard";
 
 const Admin:React.FC<IBlankMethod> = () => {
-	const location = useLocation();
-	console.log(location);
 	return (
 		<div>
 			<Entitlement
 				name="Login"
 				render={() => {
 					return (
-						<div>
-							This is login page
-						</div>
+						<Login />
+					);
+				}} />
+			<Entitlement
+				name="Dashboard"
+				render={() => {
+					return (
+						<Dashboard />
 					);
 				}} />
 		</div>

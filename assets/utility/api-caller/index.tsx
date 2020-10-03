@@ -1,6 +1,6 @@
 import {start, stop} from "../spinner";
 import actions from "../../store/actions";
-import store from "../../store";
+import store from "store";
 
 
 class ApiCaller<T> {
@@ -21,7 +21,7 @@ class ApiCaller<T> {
 					return result.json();
 				}).then((success:IResponse<T>) => {
 					if(success.session) {
-						store.dispatch(actions.session.setSession(success.session));
+						store.dispatch<any>(actions.session.setSession(success.session));
 					}
 					if(success.flush) {
 						clearHeader();
