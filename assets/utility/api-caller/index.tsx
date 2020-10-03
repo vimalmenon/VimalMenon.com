@@ -1,4 +1,6 @@
 import {start, stop} from "../spinner";
+import actions from "../../store/actions";
+import store from "../../store";
 
 
 class ApiCaller<T> {
@@ -17,13 +19,16 @@ class ApiCaller<T> {
 					this.isSpinning = false;
 					stop();
 					return result.json();
-				}).then((success:IResponseWithData<T>) => {
+				}).then((success:IResponse<T>) => {
+					if(success.session) {
+						store.dispatch(actions.session.setSession(success.session));
+					}
 					if(success.flush) {
 						clearHeader();
 					}
 					resolve(success.data);
 				})
-				.catch((error:IResponseWithData<T>) => {
+				.catch((error:IResponse<T>) => {
 					if(error.flush) {
 						clearHeader();
 					}

@@ -16,14 +16,12 @@ interface ISessionState {
 	user?:string;
 	group?: string;
 }
-interface IResponse {
+interface IResponse<T> {
 	code:number;
 	message:string;
 	session: ISessionState;
-	flush:boolean;
-}
-interface IResponseWithData<T> extends IResponse {
-	data: T;
+    flush:boolean;
+    data:T;
 }
 
 interface IComponentEntitlementData {

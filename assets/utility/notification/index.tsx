@@ -1,6 +1,12 @@
 import { useToasts } from "react-toast-notifications";
 
-const useNotification = () => {
+interface IUseNotification {
+	onError:IVoidOneParamMethod<string>,
+	onInfo: IVoidOneParamMethod<string>,
+	onSuccess: IVoidOneParamMethod<string>,
+	onWarning: IVoidOneParamMethod<string>,
+}
+const useNotification = ():IUseNotification => {
 	const { addToast } = useToasts();
 
 	const onError:IVoidOneParamMethod<string> = (message:string) => {

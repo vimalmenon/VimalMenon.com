@@ -13,7 +13,7 @@ const Admin:React.FC<IBlankMethod> = () => {
 				render={() => {
 					return (
 						<div>
-							This is admin page
+							This is login page
 						</div>
 					);
 				}} />

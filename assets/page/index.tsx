@@ -1,5 +1,4 @@
 import React from "react";
-import { Provider } from "react-redux";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -10,13 +9,13 @@ import loadable from "@loadable/component";
 import {Spinner} from "react-redux-spinner";
 import { ToastProvider } from "react-toast-notifications";
 
+import {apis} from "model";
+import {ApiCaller} from "utility";
 
-import store from "../store";
+
 import User from "./user";
-
-
-
 const Admin = loadable(() => import( /* webpackChunkName: "admin" */ /* webpackMode: "lazy" */ "./admin"));
+
 /*
 import actions from "../store/actions";
 const OtherPage = ({session, action}) => {
@@ -53,20 +52,25 @@ const OtherPageHOC = connect<IStateProps, IDispatchProps, IEmptyObject, IState>(
 
 
 const Page:React.FC<IEmptyObject> = () => {
+	React.useEffect(() => {
+		new ApiCaller<any>(new apis.MainApi())
+			.getPromise()
+			.then((data) => {
+				console.log(data);
+			});
+	}, []);
 	return (
-		<Provider store={store}>
-			<ToastProvider 
-				autoDismiss
-				autoDismissTimeout={3000}>
-				<Spinner config={{}}/>
-				<Router>
-					<Switch>
-						<Route path="/admin" component={Admin} />
-						<Route path="/" component={User} />
-					</Switch>
-				</Router>
-			</ToastProvider>
-		</Provider>
+		<ToastProvider 
+			autoDismiss
+			autoDismissTimeout={3000}>
+			<Spinner config={{}}/>
+			<Router>
+				<Switch>
+					<Route path="/admin" component={Admin} />
+					<Route path="/" component={User} />
+				</Switch>
+			</Router>
+		</ToastProvider>
 	);
 };
 

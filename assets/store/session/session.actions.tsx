@@ -1,13 +1,14 @@
 import sessionTypes from "./session.types";
 
-class SetSession implements IAction<any>{
-	public type = sessionTypes.SET_SESSION;
-	public payload;
-	constructor (data:any) {
-		this.payload = data;
-	}
-}
+const setSession = (data:ISessionState):IAction<ISessionState> => {
+	return {
+		type:sessionTypes.SET_SESSION,
+		payload:data
+	};
+};
+
+export type actionTypes = IAction<ISessionState>;
 
 export default {
-	SetSession
+	setSession
 };

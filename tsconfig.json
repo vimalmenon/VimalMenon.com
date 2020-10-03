@@ -16,6 +16,9 @@
         ],
         "typeRoots" : ["assets/typings"],
         "paths": {
+            "store": ["assets/store"],
+            "model": ["assets/model"],
+            "utility": ["assets/utility"],
         }
     }
 }
