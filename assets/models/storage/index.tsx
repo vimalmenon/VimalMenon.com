@@ -25,8 +25,8 @@ class Storage {
 		return JSON.parse(this.storage.getItem(STORAGE_VALUE));
 	}
 	public addToStorage (value) {
-		const storage = this.getStorage();
-		this.storage.setItem(STORAGE_VALUE, JSON.stringify({...storage, ...value}));
+		const storageValue = this.getStorage();
+		this.storage.setItem(STORAGE_VALUE, JSON.stringify({...storageValue, ...value}));
 	}
 }
 

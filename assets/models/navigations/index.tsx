@@ -1,7 +1,7 @@
 const home:INavigation = {
-    name: "Home",
-    url : "/",
-    title: "Vimal Menon"
+	name: "Home",
+	url : "/",
+	title: "Vimal Menon"
 };
 const PrivacyPolicy:INavigation = {
 	name :"Privacy Policy",
@@ -9,22 +9,22 @@ const PrivacyPolicy:INavigation = {
 	title : "Privacy Policy | Vimal Menon",	
 };
 const admin:INavigation = {
-    name: "admin",
-    url : "/admin",
-    title: "Admin | Vimal Menon"
+	name: "admin",
+	url : "/admin",
+	title: "Admin | Vimal Menon"
 };
 
 const mainNavigations: INavigation[] = [
-    PrivacyPolicy
+	PrivacyPolicy
 ];
-const adminNavigations:INavigation[] = []
+const adminNavigations:INavigation[] = [];
 const navigationByUrl:{[x:string]:INavigation} = {
-    [home.url]:home,
-    [admin.url]:admin,
-    [PrivacyPolicy.url]:PrivacyPolicy
+	[home.url]:home,
+	[admin.url]:admin,
+	[PrivacyPolicy.url]:PrivacyPolicy
 };
 export default {
-    mainNavigations,
-    adminNavigations,
-    navigationByUrl
+	mainNavigations,
+	adminNavigations,
+	navigationByUrl
 };

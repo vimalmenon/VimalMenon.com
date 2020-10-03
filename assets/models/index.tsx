@@ -3,7 +3,7 @@ import storage from "./storage";
 import apis from "./apis";
 
 export {
-    navigations,
-    storage,
-    apis
-} 
+	navigations,
+	storage,
+	apis
+};

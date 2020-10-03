@@ -17,6 +17,21 @@ module.exports = {
         historyApiFallback: true,
         watchOptions: {
             poll: true
+        },
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        },
+        proxy: {
+            '/api': {
+                 target: {
+                    host: "0.0.0.0",
+                    protocol: 'http:',
+                    port: 8081
+                },
+                pathRewrite: {
+                    '^/api': '/api'
+                }
+            }
         }
     },
     module: {

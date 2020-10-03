@@ -8,5 +8,5 @@ interface IReadWrite {
 }
 interface IEntitlement{
     name:string;
-    render: IReturnOneParamMehod<IReadWrite, React.ReactElement>
+    render: IReturnOneParamMethod<IReadWrite, React.ReactElement>
 }

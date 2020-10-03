@@ -1,6 +1,6 @@
 interface IAction<T> {
     type:string;
-    payload:T
+    payload?:T
 }
 
 //EasyShip          CG              Diffence

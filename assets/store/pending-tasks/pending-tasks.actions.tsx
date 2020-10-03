@@ -6,23 +6,20 @@ import {
 	end
 } from "react-redux-spinner";
 
-export class StartSpinner implements IAction<number>{
-	public type = pendingTasksTypes.START_SPINNER;
-    public payload;
-	constructor() {
-        this[pendingTask] = begin;
-	}
-}
-export class StopSpinner implements IAction<number>{
-	public type = pendingTasksTypes.STOP_SPINNER;
-    public payload;
-	constructor() {
-        this[pendingTask] = end;
-	}
-}
-export type SpinnerActionType = StartSpinner|StopSpinner;
+export const startSpinner = ():IAction<null> => {
+	return {
+		type:pendingTasksTypes.START_SPINNER,
+		[pendingTask]: begin
+	};
+};
+export const stopSpinner = ():IAction<null> => {
+	return {
+		type:pendingTasksTypes.STOP_SPINNER,
+		[pendingTask]:end
+	};
+};
 
 export default {
-    StartSpinner,
-    StopSpinner
+	startSpinner,
+	stopSpinner
 };

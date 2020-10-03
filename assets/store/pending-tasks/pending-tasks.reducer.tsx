@@ -1,7 +1,6 @@
 import {pendingTasksReducer} from "react-redux-spinner";
-import {SpinnerActionType} from "./pending-tasks.actions";
 
-function pendingTasks (state=0, action:SpinnerActionType):number {
+function pendingTasks (state=0, action:any):number {
 	return pendingTasksReducer(state, action);
 }
 

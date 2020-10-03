@@ -1,10 +1,5 @@
 interface INavigationState {
 }
-interface ISessionState {
-    id?: number;
-	user?:string;
-	group?: string;
-}
 interface IComponentSession {
     [name:number]:IReadWrite;
 }
