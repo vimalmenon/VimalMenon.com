@@ -24,7 +24,6 @@ import PageNotFound from "./page-not-found";
 
 
 const useStyles = makeStyles((theme: Theme) => {
-	console.log(theme.palette.background.paper, theme);
 	return createStyles({
 		root: {
 			display: "flex",
