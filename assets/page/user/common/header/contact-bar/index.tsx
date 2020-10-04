@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) => {
 	});
 });
 
-const ContactBar = () => {
+const ContactBar:React.FC = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>

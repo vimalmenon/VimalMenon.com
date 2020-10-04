@@ -7,7 +7,7 @@ import Link from "@material-ui/core/Link";
 
 import {icons} from "model";
 
-const SocialMedias = () => {
+const SocialMedias:React.FC = () => {
 	const socialMedias = useSelector<IState, ISocialMedia[]>(state => state.common.socialMedias);
 	return (
 		<React.Fragment>

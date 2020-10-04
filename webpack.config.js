@@ -1,6 +1,9 @@
 const path = require("path");
+const webpack  = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const packageJson = require("./package.json");
 
 module.exports = {
     watch: true,
@@ -89,6 +92,9 @@ module.exports = {
             template: './index.html',
             inject: true,
         }),
+        new webpack.DefinePlugin({
+            'VERSION' : `'${packageJson.version}'`,
+        })
     ],
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".scss"],

@@ -19,6 +19,7 @@ module.exports =  {
       "AbortController":"readonly",
       "document":"readonly",
       "location":"readonly",
+      "VERSION":"readonly",
       "setTimeout":"readonly",
       "window":"readonly"
   },
