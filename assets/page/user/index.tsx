@@ -1,22 +1,28 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
 import {
 	Switch,
 	Route
 } from "react-router-dom";
 
+import {useMetadata} from "utility";
+import {Metadata} from "component";
+
 import Home from "./home";
 import PageNotFound from "./page-not-found";
 
+
+
 const User: React.FC<IBlankMethod> = () => {
-	//const component = useSelector<IState, number>(state => state.pendingTasks);
-	//console.log(component);
+	const {navigation} = useMetadata();
 	return (
-		<Switch>
-			<Route exact path={`/`} component={Home} />
-			<Route component={PageNotFound} />
-		</Switch>
+		<React.Fragment>
+			<Metadata title={navigation.title} />
+			<Switch>
+				<Route exact path={`/`} component={Home} />
+				<Route component={PageNotFound} />
+			</Switch>
+		</React.Fragment>
 	);
 };
 

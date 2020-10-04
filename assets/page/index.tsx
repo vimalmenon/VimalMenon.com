@@ -15,7 +15,6 @@ import {
 } from "@material-ui/core/styles";
 import { useSelector } from "react-redux";
 import {palette} from "model";
-
 import {init} from "./index.service";
 
 import User from "./user";

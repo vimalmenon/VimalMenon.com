@@ -9,11 +9,15 @@ const PrivacyPolicy:INavigation = {
 	title : "Privacy Policy | Vimal Menon",	
 };
 const admin:INavigation = {
-	name: "admin",
+	name: "Admin",
 	url : "/admin",
 	title: "Admin | Vimal Menon"
 };
-
+const PageNotFound:INavigation = {
+	name: "PageNotFound",
+	url : "/page-not-found",
+	title: "Page Not Found | Vimal Menon"
+};
 const mainNavigations: INavigation[] = [
 	PrivacyPolicy
 ];
@@ -26,5 +30,6 @@ const navigationByUrl:{[x:string]:INavigation} = {
 export default {
 	mainNavigations,
 	adminNavigations,
-	navigationByUrl
+	navigationByUrl,
+	PageNotFound
 };

@@ -1,7 +1,7 @@
-import MetaData from "./meta-data";
+import Metadata from "./metadata";
 import Entitlement from "./entitlements";
 
 export {
-	MetaData,
+	Metadata,
 	Entitlement
 };

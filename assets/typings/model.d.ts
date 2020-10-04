@@ -32,3 +32,10 @@ interface ISessionStorage {
 interface ILocalStorage {
     theme:ThemeType;
 }
+interface ISocialMedia {
+    id:number;
+    name:string;
+    title:string;
+    type: string;
+    url: string;
+}

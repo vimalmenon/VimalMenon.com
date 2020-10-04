@@ -2,7 +2,7 @@ import React from "react";
 import {Helmet} from "react-helmet";
 
 
-const MetaData:React.FC<IMetaData> = ({title}) => {
+const Metadata:React.FC<IMetaData> = ({title}) => {
 	return (
 		<Helmet>
 			<meta charSet="utf-8" />
@@ -12,4 +12,4 @@ const MetaData:React.FC<IMetaData> = ({title}) => {
 	); 
 };
 
-export default MetaData;
+export default Metadata;

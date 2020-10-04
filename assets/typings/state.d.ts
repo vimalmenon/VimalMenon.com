@@ -8,9 +8,12 @@ interface IComponentState {
 }
 interface INotificationState {
 }
-type ThemeType = "light"|"dark";
+
+type ThemeType = "light"|"dark"|undefined;
+
 interface ICommonState {
     theme:ThemeType;
+    socialMedias:ISocialMedia[];
 }
 interface IState {
     navigation: INavigationState;

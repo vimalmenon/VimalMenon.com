@@ -12,7 +12,7 @@ export class Api implements IApi{
 		this.method = method;
 		this.url = url;
 	}
-	public setApiData (data) {
+	public setApiData<T>(data:T):void {
 		this.body = JSON.stringify(data);
 	}
 }
@@ -25,7 +25,7 @@ class MainApi extends Api {
 class ComponentEntitlement extends Api {
 	constructor (data:IComponentEntitlementData) {
 		super("componentEntitlement", METHODS.POST, "/api/component_entitlement");
-		this.setApiData(data);
+		this.setApiData<IComponentEntitlementData>(data);
 	}
 }
 

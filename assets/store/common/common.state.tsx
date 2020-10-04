@@ -1,5 +1,6 @@
 const common:ICommonState = {
-	theme:"dark"
+	theme:"dark",
+	socialMedias:[]
 };
 
 export default common;
