@@ -11,7 +11,7 @@ const setTheme = (value:ThemeType):IAction<{theme:ThemeType}> => {
 };
 const setSocialMedias = (value:ISocialMedia[]):IAction<{socialMedias:ISocialMedia[]}> => {
 	return {
-		type: CommonTypes.SET_THEME,
+		type: CommonTypes.SET_SOCIAL_MEDIAS,
 		payload:{
 			socialMedias:value
 		}

@@ -5,24 +5,50 @@ import {
 	Route
 } from "react-router-dom";
 
+import {
+	Theme,
+	makeStyles,
+	createStyles
+} from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+
 import {useMetadata} from "utility";
 import {Metadata} from "component";
+
+
+import Header from "./common/header";
+import Footer from "./common/footer";
 
 import Home from "./home";
 import PageNotFound from "./page-not-found";
 
 
+const useStyles = makeStyles((theme: Theme) => {
+	console.log(theme.palette.background.paper, theme);
+	return createStyles({
+		root: {
+			display: "flex",
+			flexDirection: "column",
+			backgroundColor: theme.palette.background.paper,
+			color: theme.palette.text.primary,
+		},
+	});
+});
 
 const User: React.FC<IBlankMethod> = () => {
 	const {navigation} = useMetadata();
+	const classes = useStyles();
 	return (
-		<React.Fragment>
+		<div className={classes.root}>
+			<CssBaseline />
 			<Metadata title={navigation.title} />
+			<Header />
 			<Switch>
 				<Route exact path={`/`} component={Home} />
 				<Route component={PageNotFound} />
 			</Switch>
-		</React.Fragment>
+			<Footer />
+		</div>
 	);
 };
 

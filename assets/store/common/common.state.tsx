@@ -1,5 +1,5 @@
 const common:ICommonState = {
-	theme:"dark",
+	theme:"light",
 	socialMedias:[]
 };
 
