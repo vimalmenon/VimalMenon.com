@@ -12,7 +12,7 @@ export const getHeaders = ():HeadersInit => {
 	return headers;
 };
 
-export const clearHeader = () => {
+export const clearHeaders = ():void => {
 	const sessionStorage = storage.selectStorage(StorageType.session).getStorage();
 	storage.selectStorage(StorageType.session).addToStorage({...sessionStorage, Authorization: null});
 };

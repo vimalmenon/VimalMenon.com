@@ -21,6 +21,12 @@ class Storage {
 		}
 		return this;
 	}
+	public selectLocalStorage () {
+		this.storage = localStorage;
+	}
+	public selectSessionStorage () {
+		this.storage = sessionStorage;
+	}
 	public getStorage () {
 		return JSON.parse(this.storage.getItem(STORAGE_VALUE));
 	}

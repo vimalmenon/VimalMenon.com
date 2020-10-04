@@ -1,9 +1,7 @@
+import {getHeaders, clearHeaders} from "./headers";
+
 import {start, stop} from "../spinner";
-import actions from "actions";
-import store from "store";
-
-import {getHeaders, clearHeader} from "./headers";
-
+import session from "../session";
 
 class ApiCaller<T> {
 	private promise;
@@ -24,16 +22,16 @@ class ApiCaller<T> {
 					return result.json();
 				}).then((success:IResponse<T>) => {
 					if(success.session) {
-						store.dispatch<any>(actions.session.setSession(success.session));
+						session.setSession(success.session);
 					}
 					if(success.flush) {
-						clearHeader();
+						clearHeaders();
 					}
 					resolve(success.data);
 				})
 				.catch((error:IResponse<T>) => {
 					if(error.flush) {
-						clearHeader();
+						clearHeaders();
 					}
 					reject(error.data);
 				});

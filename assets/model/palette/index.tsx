@@ -1,5 +1,4 @@
-const palette = {	
-	type : "light",
+const palette = {
 	primary:{
 		light:"#394a6b",
 		main:"#00172B",

@@ -26,3 +26,9 @@ interface IComponentEntitlementData {
     name:string
 }
 
+interface ISessionStorage {
+
+}
+interface ILocalStorage {
+    theme:ThemeType;
+}
