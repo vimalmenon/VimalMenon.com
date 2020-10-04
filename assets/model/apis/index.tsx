@@ -1,5 +1,4 @@
-import{METHODS, getHeaders} from "./helper";
-import storage, {StorageType} from "../storage";
+import{METHODS} from "./helper";
 
 
 export class Api implements IApi{
@@ -12,18 +11,9 @@ export class Api implements IApi{
 		this.name = name;
 		this.method = method;
 		this.url = url;
-		this.setHeaders();
 	}
 	public setApiData (data) {
 		this.body = JSON.stringify(data);
-	}
-	public setHeaders () {
-		const value = storage.selectStorage(StorageType.session).getStorage();
-		this.headers = getHeaders(value);
-	}
-	public clearHeader () {
-		const sessionStorage = storage.selectStorage(StorageType.session).getStorage();
-		storage.selectStorage(StorageType.session).addToStorage({...sessionStorage, Authorization: null});
 	}
 }
 

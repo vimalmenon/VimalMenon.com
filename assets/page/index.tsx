@@ -9,11 +9,18 @@ import loadable from "@loadable/component";
 import {Spinner} from "react-redux-spinner";
 import { ToastProvider } from "react-toast-notifications";
 
-import {apis} from "model";
-import {ApiCaller} from "utility";
+import {
+	ThemeProvider,
+	createMuiTheme
+} from "@material-ui/core/styles";
+import { useDispatch, useSelector } from "react-redux";
 
+import {init} from "./index.service";
 
 import User from "./user";
+
+
+
 const Admin = loadable(() => import( /* webpackChunkName: "admin" */ /* webpackMode: "lazy" */ "./admin"));
 
 /*
@@ -53,24 +60,28 @@ const OtherPageHOC = connect<IStateProps, IDispatchProps, IEmptyObject, IState>(
 
 const Page:React.FC<IEmptyObject> = () => {
 	React.useEffect(() => {
-		new ApiCaller<any>(new apis.MainApi())
-			.getPromise()
-			.then((data) => {
-				console.log(data);
-			});
+		init();
 	}, []);
+	const type = useSelector<IState, ThemeType>(state => state.common.theme);
+	const theme = createMuiTheme({
+		palette: {
+			type
+		}
+	});
 	return (
-		<ToastProvider 
-			autoDismiss
-			autoDismissTimeout={3000}>
-			<Spinner config={{}}/>
-			<Router>
-				<Switch>
-					<Route path="/admin" component={Admin} />
-					<Route path="/" component={User} />
-				</Switch>
-			</Router>
-		</ToastProvider>
+		<ThemeProvider theme={theme}>
+			<ToastProvider 
+				autoDismiss
+				autoDismissTimeout={3000}>
+				<Spinner config={{}}/>
+				<Router>
+					<Switch>
+						<Route path="/admin" component={Admin} />
+						<Route path="/" component={User} />
+					</Switch>
+				</Router>
+			</ToastProvider>
+		</ThemeProvider>
 	);
 };
 

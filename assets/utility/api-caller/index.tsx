@@ -1,6 +1,8 @@
 import {start, stop} from "../spinner";
-import actions from "../../store/actions";
+import actions from "actions";
 import store from "store";
+
+import {getHeaders, clearHeader} from "./headers";
 
 
 class ApiCaller<T> {
@@ -10,11 +12,12 @@ class ApiCaller<T> {
 	constructor (data:IApi) {
 		this.controller = new AbortController();
 		const signal = this.controller.signal;
-		const {url, clearHeader, ...rest} = data;
+		const {url, ...rest} = data;
+		const headers = getHeaders();
 		this.isSpinning = true;
 		start();
 		this.promise = new Promise<T>((resolve, reject)=> {
-			fetch(url, {...rest, signal})
+			fetch(url, {...rest, headers, signal})
 				.then((result) => {
 					this.isSpinning = false;
 					stop();

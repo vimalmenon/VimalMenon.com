@@ -8,8 +8,6 @@ interface IApi {
     method : string;
     url : string;
     body?: string;
-    headers: HeadersInit;
-    clearHeader:IVoidNoParamMethod
 }
 interface ISessionState {
     id?: number;

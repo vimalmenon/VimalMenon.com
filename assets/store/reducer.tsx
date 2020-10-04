@@ -5,8 +5,10 @@ import navigation from "./navigation/navigation.reducer";
 import component from "./component/component.reducer";
 import notification from "./notification/notification.reducer";
 import pendingTasks from "./pending-tasks/pending-tasks.reducer";
+import common from "./common/common.reducer";
 
 const reducer = combineReducers<IState>({
+	common,
 	component,
 	notification,
 	navigation,

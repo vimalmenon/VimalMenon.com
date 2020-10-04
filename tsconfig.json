@@ -20,6 +20,8 @@
             "model": ["assets/model"],
             "utility": ["assets/utility"],
             "component": ["assets/component"],
+            "actions":["assets/store/actions"],
+            "const":["assets/const"],
         }
     }
 }

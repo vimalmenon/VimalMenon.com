@@ -97,7 +97,9 @@ module.exports = {
             "store": path.resolve(__dirname, "./assets/store"),
             "model": path.resolve(__dirname, "./assets/model"),
             "utility": path.resolve(__dirname, "./assets/utility"),
-            "component": path.resolve(__dirname, "./assets/component")
+            "component": path.resolve(__dirname, "./assets/component"),
+            "actions": path.resolve(__dirname, "./assets/store/actions"),
+            "const": path.resolve(__dirname, "./assets/const")
         }
     }
 }
