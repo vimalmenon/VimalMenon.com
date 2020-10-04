@@ -7,7 +7,6 @@ import {
 
 import loadable from "@loadable/component";
 import {Spinner} from "react-redux-spinner";
-import { ToastProvider } from "react-toast-notifications";
 
 import {
 	ThemeProvider,
@@ -16,6 +15,8 @@ import {
 import { useSelector } from "react-redux";
 import {palette} from "model";
 import {init} from "./index.service";
+
+import {Notification} from "component";
 
 import User from "./user";
 const Admin = loadable(() => import( /* webpackChunkName: "admin" */ /* webpackMode: "lazy" */ "./admin"));
@@ -39,9 +40,7 @@ const Page:React.FC<IEmptyObject> = () => {
 	});
 	return (
 		<ThemeProvider theme={theme}>
-			<ToastProvider 
-				autoDismiss
-				autoDismissTimeout={3000}>
+			<Notification>
 				<Spinner config={{}}/>
 				<Router>
 					<Switch>
@@ -49,7 +48,7 @@ const Page:React.FC<IEmptyObject> = () => {
 						<Route path="/" component={User} />
 					</Switch>
 				</Router>
-			</ToastProvider>
+			</Notification>
 		</ThemeProvider>
 	);
 };

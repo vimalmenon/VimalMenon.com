@@ -1,5 +1,6 @@
 const common:ICommonState = {
 	theme:"light",
+	notification:null,
 	socialMedias:[]
 };
 

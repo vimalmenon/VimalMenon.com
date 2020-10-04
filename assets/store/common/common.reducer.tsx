@@ -7,9 +7,13 @@ export default function (oldState=common, action:ActionTypes):ICommonState  {
 		const state = {...oldState};
 		state.theme = action.payload?.theme;
 		return state;
-	}else if (action.type === CommonTypes.SET_SOCIAL_MEDIAS) {
+	} else if (action.type === CommonTypes.SET_SOCIAL_MEDIAS) {
 		const state = {...oldState};
 		state.socialMedias = action.payload?.socialMedias || [];
+		return state;
+	} else if (action.type === CommonTypes.SET_NOTIFICATION) {
+		const state = {...oldState};
+		state.notification = action.payload?.notification || null;
 		return state;
 	}
 	return oldState;

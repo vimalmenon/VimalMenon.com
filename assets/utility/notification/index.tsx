@@ -1,13 +1,17 @@
+import { useDispatch } from "react-redux";
 import { useToasts } from "react-toast-notifications";
+import actions from "actions";
 
 interface IUseNotification {
-	onError:IVoidOneParamMethod<string>,
-	onInfo: IVoidOneParamMethod<string>,
-	onSuccess: IVoidOneParamMethod<string>,
-	onWarning: IVoidOneParamMethod<string>,
+	onError:IVoidOneParamMethod<string>;
+	onInfo: IVoidOneParamMethod<string>;
+	onSuccess: IVoidOneParamMethod<string>;
+	onWarning: IVoidOneParamMethod<string>;
+	onToast:IVoidOneParamMethod<string|null>
 }
 const useNotification = ():IUseNotification => {
 	const { addToast } = useToasts();
+	const dispatch = useDispatch();
 
 	const onError:IVoidOneParamMethod<string> = (message:string) => {
 		addToast(message, { appearance: "error"});
@@ -21,8 +25,13 @@ const useNotification = ():IUseNotification => {
 	const onWarning:IVoidOneParamMethod<string> = (message:string) => {
 		addToast(message, { appearance: "warning"});
 	};
-	return {onError, onInfo, onSuccess, onWarning};
+	const onToast = (value:string|null) => {
+		dispatch(actions.common.setNotification(value));
+	};
+	return {onError, onInfo, onSuccess, onWarning, onToast};
 };
 
 
-export default useNotification;
+export default {
+	useNotification
+};

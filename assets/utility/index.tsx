@@ -1,5 +1,5 @@
 import spinner from "./spinner";
-import useNotification from "./notification";
+import notification from "./notification";
 import ApiCaller from "./api-caller";
 import storage, {StorageType} from "./storage";
 import common from "./common";
@@ -8,7 +8,7 @@ import useMetadata from "./metadata";
 
 export {
 	useMetadata,
-	useNotification,
+	notification,
 	common,
 	storage,
 	StorageType,

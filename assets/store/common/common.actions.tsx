@@ -17,10 +17,18 @@ const setSocialMedias = (value:ISocialMedia[]):IAction<{socialMedias:ISocialMedi
 		}
 	};
 };
-
-export type ActionTypes = IAction<{theme:ThemeType;socialMedias:ISocialMedia[]}>;
+const setNotification = (value:string|null):IAction<{notification:string|null}> => {
+	return {
+		type: CommonTypes.SET_NOTIFICATION,
+		payload:{
+			notification:value
+		}
+	};
+};
+export type ActionTypes = IAction<{theme:ThemeType;socialMedias:ISocialMedia[];notification:string|null}>;
 
 export default {
 	setTheme,
+	setNotification,
 	setSocialMedias
 };

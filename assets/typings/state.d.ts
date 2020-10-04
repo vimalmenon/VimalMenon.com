@@ -14,6 +14,7 @@ type ThemeType = "light"|"dark"|undefined;
 interface ICommonState {
     theme:ThemeType;
     socialMedias:ISocialMedia[];
+    notification:string|null;
 }
 interface IState {
     navigation: INavigationState;
