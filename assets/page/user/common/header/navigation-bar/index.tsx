@@ -5,6 +5,9 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
+import Logo from "./logo";
+import Navigation from "./navigation";
+
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
 		root: {
@@ -36,7 +39,7 @@ const NavigationBar:React.FC = () => {
 	return (
 		<div className={classes.root}>
 			<div className={classes.container}>
-
+				<Logo />
 			</div>
 		</div>
 	);
