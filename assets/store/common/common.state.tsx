@@ -1,7 +1,8 @@
 const common:ICommonState = {
 	theme:"light",
 	notification:null,
-	socialMedias:[]
+	socialMedias:[],
+	loading:true
 };
 
 export default common;

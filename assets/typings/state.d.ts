@@ -15,6 +15,7 @@ interface ICommonState {
     theme:ThemeType;
     socialMedias:ISocialMedia[];
     notification:string|null;
+    loading:boolean;
 }
 interface IState {
     navigation: INavigationState;

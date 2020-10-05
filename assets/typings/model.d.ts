@@ -3,6 +3,10 @@ interface INavigation {
     url : string;
     title: string;
 }
+interface IHomeNavigation {
+    name: string;
+    className : string;
+}
 interface IApi {
     name: string;
     method : string;

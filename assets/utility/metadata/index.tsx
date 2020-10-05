@@ -6,7 +6,7 @@ const metadata = ():{navigation:INavigation} => {
 	const {pathname} = location;
 	let navigation = navigations.navigationByUrl[pathname];
 	if(!navigation) {
-		navigation = navigations.PageNotFound;
+		navigation = navigations.pageNotFound;
 	}
 	return {navigation};
 };
