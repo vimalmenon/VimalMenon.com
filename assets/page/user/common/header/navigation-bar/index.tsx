@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
 	Theme,
 	makeStyles,
@@ -10,34 +9,37 @@ const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
 		root: {
 			display: "flex",
-			background: theme.palette.type==="light"?"#00162A":"#191919",
+			flex: "0 0 63px",
 			justifyContent : "center",
-			color: "white"
+			backgroundColor:(theme.palette.type==="light")?theme.palette.background.paper:"#121212"
 		},
 		container : {
 			display:"flex",
-			flexDirection:"row",
-			flex: `1 1 100%`,
-			margin: theme.spacing(6,1),
+			flex: "1 1 100%",
+			alignItems : "center",
+			margin: theme.spacing(1,0),
 			[theme.breakpoints.up("lg")]: {
+				display:"flex",
 				flex: `0 0 ${theme.breakpoints.values.lg}px`,
 			},
-			[theme.breakpoints.down("sm")]: {
-				flexDirection:"column",
-			},
 		},
+		navigation : {
+			display: "flex",
+			justifyContent :"flex-end",
+			flex: "1 1 auto"
+		}
 	});
 });
 
-const UpperFooter:React.FC = () => {
+const NavigationBar:React.FC = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
 			<div className={classes.container}>
-				Upper Footer
+
 			</div>
 		</div>
 	);
 };
 
-export default UpperFooter;
+export default NavigationBar;

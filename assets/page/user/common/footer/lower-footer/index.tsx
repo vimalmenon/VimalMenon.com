@@ -1,5 +1,3 @@
-declare const VERSION;
-
 import * as React from "react";
 
 import {
@@ -11,8 +9,8 @@ import {
 import {
 	Link
 } from "react-router-dom";
+import {APP_VERSION} from "const";
 
-const version = VERSION;
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
@@ -44,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) => {
 	});
 });
 
-const LowerFooter = () => {
+const LowerFooter:React.FC = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
@@ -56,7 +54,7 @@ const LowerFooter = () => {
 					</span>
 				</p>
 				<p>
-					v{VERSION}
+					v{APP_VERSION}
 				</p>
 			</div>
 		</div>
