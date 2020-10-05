@@ -40,6 +40,9 @@ const NavigationBar:React.FC = () => {
 		<div className={classes.root}>
 			<div className={classes.container}>
 				<Logo />
+				<div className={classes.navigation}>
+					<Navigation />
+				</div>
 			</div>
 		</div>
 	);

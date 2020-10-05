@@ -6,6 +6,9 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
+import Explore from "./explore";
+import Contact from "./contact";
+
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
 		root: {
@@ -34,7 +37,8 @@ const UpperFooter:React.FC = () => {
 	return (
 		<div className={classes.root}>
 			<div className={classes.container}>
-				Upper Footer
+				<Contact />
+				<Explore />
 			</div>
 		</div>
 	);
