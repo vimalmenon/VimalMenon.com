@@ -49,7 +49,8 @@ const adminNavigations:INavigation[] = [];
 const navigationByUrl:{[x:string]:INavigation} = {
 	[home.url]:home,
 	[admin.url]:admin,
-	[privacyPolicy.url]:privacyPolicy
+	[privacyPolicy.url]:privacyPolicy,
+	[tutorials.url]:tutorials,
 };
 export default {
 	footerNavigations,

@@ -8,7 +8,6 @@ import {navigations} from "model";
 
 
 const Explore = () => {
-	console.log(navigations.footerNavigations);
 	return (
 		<div>
 			{navigations.footerNavigations.map((navigation, key) => {

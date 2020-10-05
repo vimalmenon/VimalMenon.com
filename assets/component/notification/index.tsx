@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import actions from "actions";
 
 
-const Notification = ({children}) => {
+const Notification:React.FC<INotification> = ({children}) => {
 	const value = useSelector<IState, string|null>(state => state.common.notification);
 	const dispatch = useDispatch();
 	const handleClose = () => {

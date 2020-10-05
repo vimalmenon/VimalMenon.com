@@ -1,7 +1,6 @@
 import React from "react";
 
 import {
-	Theme,
 	makeStyles,
 	createStyles
 } from "@material-ui/core/styles";
@@ -9,7 +8,7 @@ import {
 import ContactBar from "./contact-bar";
 import NavigationBar from "./navigation-bar";
 
-const useStyles = makeStyles((theme: Theme) => {
+const useStyles = makeStyles(() => {
 	return createStyles({
 		root: {
 			display: "flex",

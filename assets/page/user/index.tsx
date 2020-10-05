@@ -21,6 +21,7 @@ import Footer from "./common/footer";
 
 import Home from "./home";
 import PrivacyPolicy from "./privacy-policy";
+import Tutorials from "./tutorials";
 import PageNotFound from "./page-not-found";
 
 
@@ -46,6 +47,7 @@ const User: React.FC<IBlankMethod> = () => {
 			<Switch>
 				<Route exact path={`/`} component={Home} />
 				<Route exact path={`/privacy-policy`} component={PrivacyPolicy} />
+				<Route exact path={`/tutorials`} component={Tutorials} />
 				<Route component={PageNotFound} />
 			</Switch>
 			<Footer />
