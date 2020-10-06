@@ -46,7 +46,7 @@ const footerNavigations : INavigation[] = [
 	privacyPolicy
 ];
 const adminNavigations:INavigation[] = [];
-const navigationByUrl:{[x:string]:INavigation} = {
+const navigationByUrl:{[key:string]:INavigation} = {
 	[home.url]:home,
 	[admin.url]:admin,
 	[privacyPolicy.url]:privacyPolicy,
