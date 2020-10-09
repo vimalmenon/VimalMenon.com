@@ -1,4 +1,4 @@
-const admin:IAdmin = {
+const admin:IAdminState = {
 };
 
 export default admin;

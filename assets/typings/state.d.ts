@@ -17,7 +17,7 @@ interface ICommonState {
     notification:string|null;
     loading:boolean;
 }
-interface IAdmin {
+interface IAdminState {
 
 }
 interface IState {
@@ -27,5 +27,5 @@ interface IState {
     notification: INotificationState;
     common:ICommonState;
     pendingTasks?:number;
-    admin:IAdmin
+    admin:IAdminState
 }
