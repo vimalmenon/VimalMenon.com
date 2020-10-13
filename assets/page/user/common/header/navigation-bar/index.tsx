@@ -7,6 +7,7 @@ import {
 
 import Logo from "./logo";
 import Navigation from "./navigation";
+import Toolbar from "./toolbar";
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
@@ -42,6 +43,7 @@ const NavigationBar:React.FC = () => {
 				<Logo />
 				<div className={classes.navigation}>
 					<Navigation />
+					<Toolbar />
 				</div>
 			</div>
 		</div>

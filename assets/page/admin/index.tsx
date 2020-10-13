@@ -12,6 +12,9 @@ import {
 } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
+import Header from "../user/common/header";
+import Footer from "../user/common/footer";
+
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
 		root: {
@@ -28,6 +31,7 @@ const Admin:React.FC<IBlankMethod> = () => {
 	return (
 		<div className={classes.root}>
 			<CssBaseline />
+			<Header />
 			<Entitlement
 				name="Login"
 				render={() => {
@@ -42,6 +46,7 @@ const Admin:React.FC<IBlankMethod> = () => {
 						<Dashboard />
 					);
 				}} />
+			<Footer />
 		</div>
 	);
 };

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Tutorials = () => {
+const Tutorials:React.FC = () => {
 	return (
 		<div>
 			This is tutorial
