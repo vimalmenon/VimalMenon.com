@@ -1,14 +1,9 @@
 import React from "react";
 
-interface ICredential {
-	username:string;
-	password:string;
-}
+import {signIn} from "./index.service";
+
 const Login:React.FC = () => {
 	const [credential, setCredential] = React.useState<ICredential>({username:"", password:""});
-	const signIn = () => {
-		console.log(credential);
-	};
 	return (
 		<div>
 			<input 
@@ -23,7 +18,7 @@ const Login:React.FC = () => {
 				placeholder="Password"
 				value={credential.password}
 				onChange={(e) =>setCredential({...credential, password:e.target.value})}/>
-			<button onClick={signIn} >Sign In</button>
+			<button onClick={() => signIn(credential)} >Sign In</button>
 		</div>
 	);
 };

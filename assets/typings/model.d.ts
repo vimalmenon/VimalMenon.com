@@ -43,3 +43,8 @@ interface ISocialMedia {
     type: string;
     url: string;
 }
+
+interface ICredential {
+	username:string;
+	password:string;
+}

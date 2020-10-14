@@ -3,6 +3,7 @@ import {THEME_VALUE} from "const";
 import store from "store";
 import actions from "actions";
 
+
 const setTheme:(value:ThemeType) =>void = (value):void => {
 	const localStorage =  storage.selectStorage(StorageType.local).getStorage();
 	storage.selectStorage(StorageType.local).addToStorage({...localStorage, [THEME_VALUE]:value});
@@ -27,8 +28,16 @@ export const switchThemeLocalStorageAndState = ():void => {
 	setTheme(theme);
 	store.dispatch(actions.common.setTheme(theme));
 };
-
+export const getHeadersAuthorization = ():string=> {
+	const value = storage.selectStorage(StorageType.session).getStorage();
+	return value["Authorization"];
+};
+export const setHeadersAuthorization= (value:string|null):void=> {
+	storage.selectStorage(StorageType.session).addToStorage({Authorization:value});
+};
 export default {
+	getHeadersAuthorization,
+	setHeadersAuthorization,
 	themeLocalStorageAndState,
 	switchThemeLocalStorageAndState
 };

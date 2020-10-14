@@ -1,18 +1,17 @@
-import storage, {StorageType} from "../storage";
+import {getHeadersAuthorization, setHeadersAuthorization} from "../common";
 
 export const getHeaders = ():HeadersInit => {
-	const value = storage.selectStorage(StorageType.session).getStorage();
-   
+	
+	const value = getHeadersAuthorization();
 	const headers:HeadersInit = {
 		"Content-Type": "application/json",
 	};
-	if(value["Authorization"]) {
-		headers["Authorization"] = value["Authorization"];
+	if(value) {
+		headers["Authorization"] = value;
 	}
 	return headers;
 };
 
 export const clearHeaders = ():void => {
-	const sessionStorage = storage.selectStorage(StorageType.session).getStorage();
-	storage.selectStorage(StorageType.session).addToStorage({...sessionStorage, Authorization: null});
+	setHeadersAuthorization(null);
 };

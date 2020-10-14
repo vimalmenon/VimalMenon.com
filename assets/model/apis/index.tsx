@@ -29,12 +29,21 @@ class ComponentEntitlement extends Api {
 	}
 }
 
+class Login extends Api {
+	constructor (data:ICredential) {
+		super("login", METHODS.POST, "/api/log_in");
+		this.setApiData<ICredential>(data);
+	}
+}
+
 export default {
 	ComponentEntitlement,
-	MainApi
+	MainApi,
+	Login
 };
 
 export {
 	ComponentEntitlement,
-	MainApi
+	MainApi,
+	Login
 };
