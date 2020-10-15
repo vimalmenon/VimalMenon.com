@@ -12,6 +12,6 @@ export const signIn = (credential:ICredential):void => {
 	}
 	new ApiCaller<string>(new apis.Login(credential), common.setHeadersAuthorization);
 };
-export const onSubmit = (e:SyntheticEvent, credential:ICredential):void => {
+export const onSubmit = (e:SyntheticEvent):void => {
 	e.preventDefault();
 };
