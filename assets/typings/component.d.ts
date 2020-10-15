@@ -11,6 +11,6 @@ interface IEntitlement{
     render: IReturnOneParamMethod<IReadWrite, React.ReactElement>
 }
 
-interface INotification {
+interface IComponentChildren {
     children: JSX.Element[] | JSX.Element
 }

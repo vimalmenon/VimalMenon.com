@@ -15,6 +15,7 @@ import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import Input from "@material-ui/core/Input";
 
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
@@ -22,7 +23,8 @@ import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import {signIn, onSubmit} from "./index.service";
 import Header from "../../user/common/header";
 import Footer from "../../user/common/footer";
-import Input from "@material-ui/core/Input";
+import Container from "../../user/common/container";
+
 
 
 const useStyles = makeStyles((theme: Theme) => {
@@ -34,7 +36,11 @@ const useStyles = makeStyles((theme: Theme) => {
 			color: theme.palette.text.primary,
 		},
 		signInContainer : {
-
+			margin: theme.spacing(1),
+		},
+		container : {
+			display:"flex",
+			flex: "1 1 100%",
 		}
 	});
 });
@@ -46,53 +52,57 @@ const Login:React.FC = () => {
 	return (
 		<div className={classes.root}>
 			<Header />
-			<form onSubmit={onSubmit} autoComplete={"off"}>
-				<Grid container spacing={3} className={classes.signInContainer}>
-					<Grid item xs={12}>
-						<Typography variant="h4" align="center">
-							Sign In
-						</Typography>
+			<Container>				
+				<form onSubmit={onSubmit} autoComplete={"off"} className={classes.container}>
+					<Grid container spacing={3}>
+						<Grid item xs={12}>
+							<Typography variant="h4" align="center">
+								Sign In
+							</Typography>
+						</Grid>
+						<Grid item xs={12}>
+							<TextField 
+								fullWidth={true}
+								color="secondary"
+								required 
+								id="username" 
+								label="Username" 
+								value={credential.username || ""}
+								onChange={(e) => setCredential({...credential,"username": e.target.value})}
+								placeholder="Username"/>
+						</Grid>
+						<Grid item xs={12}>
+							<FormControl fullWidth={true} required color="secondary">
+								<InputLabel>Password</InputLabel>
+								<Input
+									type={showPassword ? "text" : "password"}
+									value={credential.password || ""}
+									onChange={(e) => setCredential({...credential,"password": e.target.value})}
+									endAdornment={
+										<InputAdornment position="end">
+											<IconButton
+												aria-label="toggle password visibility"
+												onClick={() => setShowPassword(!showPassword)}>
+												{showPassword ? <Visibility /> : <VisibilityOff />}
+											</IconButton>
+										</InputAdornment>
+									} />
+							</FormControl>
+						</Grid>
+						<Grid item xs={12}>
+							<Button 
+								type="submit"
+								fullWidth={true}
+								variant="contained" 
+								color="primary"
+								onClick={() => signIn(credential)}>
+								Sign In
+							</Button>
+						</Grid>
 					</Grid>
-					<Grid item xs={12}>
-						<TextField 
-							fullWidth={true}
-							required 
-							id="username" 
-							label="Username" 
-							value={credential.username || ""}
-							onChange={(e) => setCredential({...credential,"username": e.target.value})}
-							placeholder="Username"/>
-					</Grid>
-					<Grid item xs={12}>
-						<FormControl fullWidth={true} required>
-							<InputLabel>Password</InputLabel>
-							<Input
-								type={showPassword ? "text" : "password"}
-								value={credential.password || ""}
-								onChange={(e) => setCredential({...credential,"password": e.target.value})}
-								endAdornment={
-									<InputAdornment position="end">
-										<IconButton
-											aria-label="toggle password visibility"
-											onClick={() => setShowPassword(!showPassword)}>
-											{showPassword ? <Visibility /> : <VisibilityOff />}
-										</IconButton>
-									</InputAdornment>
-								} />
-						</FormControl>
-					</Grid>
-					<Grid item xs={12}>
-						<Button 
-							type="submit"
-							fullWidth={true}
-							variant="contained" 
-							color="primary"
-							onClick={() => signIn(credential)}>
-							Sign In
-						</Button>
-					</Grid>
-				</Grid>
-			</form>
+				</form>
+			</Container>
+
 			<Footer />
 		</div>
 	);

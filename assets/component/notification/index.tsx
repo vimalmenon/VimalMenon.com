@@ -13,7 +13,7 @@ const Wrapper = () => {
 		</React.Fragment>
 	);
 };
-const Notification:React.FC<INotification> = ({children}) => {
+const Notification:React.FC<IComponentChildren> = ({children}) => {
 	const value = useSelector<IState, string|null>(state => state.common.notification);
 	const dispatch = useDispatch();
 	const handleClose = () => {

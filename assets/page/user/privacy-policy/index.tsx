@@ -1,10 +1,14 @@
 import React from "react";
 
+import Container from "../common/container";
+
 const PrivacyPolicy:React.FC = () => {
 	return (
-		<div>
-			This is Privacy Policy
-		</div>
+		<Container>
+			<div>
+				This is Privacy Policy
+			</div>
+		</Container>
 	);
 };
 

@@ -2,6 +2,8 @@ import React from "react";
 
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 
+import Container from "../../common/container";
+
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
 		root : {
@@ -14,9 +16,11 @@ const useStyles = makeStyles((theme: Theme) => {
 const Contact:React.FC = () => {
 	const classes = useStyles();
 	return (
-		<div className={classes.root}>
-			This is contact
-		</div>
+		<Container>
+			<div className={classes.root}>
+				This is contact
+			</div>
+		</Container>
 	);
 };
 

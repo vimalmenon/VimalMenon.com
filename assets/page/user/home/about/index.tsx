@@ -1,10 +1,15 @@
 import React from "react";
 
+import Container from "../../common/container";
+
 const About:React.FC = () => {
 	return (
-		<div>
-			this is about
-		</div>
+		<Container>
+			<div>
+				this is about
+			</div>
+		</Container>
+		
 	);
 };
 
