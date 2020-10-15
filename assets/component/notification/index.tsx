@@ -1,10 +1,18 @@
 import React from "react";
-import { ToastProvider } from "react-toast-notifications";
+import { ToastProvider} from "react-toast-notifications";
 import Snackbar from "@material-ui/core/Snackbar";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "actions";
+import {notification} from "utility";
 
 
+const Wrapper = () => {
+	notification.init();
+	return (
+		<React.Fragment>
+		</React.Fragment>
+	);
+};
 const Notification:React.FC<INotification> = ({children}) => {
 	const value = useSelector<IState, string|null>(state => state.common.notification);
 	const dispatch = useDispatch();
@@ -24,6 +32,7 @@ const Notification:React.FC<INotification> = ({children}) => {
 				autoHideDuration={3000}
 				message={value}
 				onClose={handleClose} />
+			<Wrapper />
 			{children}
 		</ToastProvider>
 	);

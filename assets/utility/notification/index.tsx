@@ -9,10 +9,13 @@ interface IUseNotification {
 	onWarning: IVoidOneParamMethod<string>;
 	onToast:IVoidOneParamMethod<string|null>
 }
+let dispatch;
+let addToast;
+const init = ():void => {
+	dispatch = useDispatch();
+	addToast = useToasts().addToast;
+};
 const useNotification = ():IUseNotification => {
-	const { addToast } = useToasts();
-	const dispatch = useDispatch();
-
 	const onError:IVoidOneParamMethod<string> = (message:string) => {
 		addToast(message, { appearance: "error"});
 	};
@@ -33,5 +36,6 @@ const useNotification = ():IUseNotification => {
 
 
 export default {
+	init,
 	useNotification
 };

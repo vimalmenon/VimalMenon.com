@@ -7,7 +7,7 @@ class ApiCaller<T> {
 	private promise;
 	private controller;
 	private isSpinning;
-	constructor (data:IApi) {
+	constructor (data:IApi, callback?:IVoidOneParamMethod<T>) {
 		this.controller = new AbortController();
 		const signal = this.controller.signal;
 		const {url, ...rest} = data;
@@ -21,6 +21,9 @@ class ApiCaller<T> {
 					stop();
 					return result.json();
 				}).then((success:IResponse<T>) => {
+					if (callback && success.data) {
+						callback(success.data);
+					}
 					if(success.session) {
 						session.setSession(success.session);
 					}
