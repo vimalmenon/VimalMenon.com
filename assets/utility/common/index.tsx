@@ -35,7 +35,14 @@ export const getHeadersAuthorization = ():string=> {
 export const setHeadersAuthorization= (value:string|null):void=> {
 	storage.selectStorage(StorageType.session).addToStorage({Authorization:value});
 };
+export const replaceUrlBackslashAtEnd = (url: string) => {
+	if ((url !== "/") && url.substring(url.length-1, url.length) === "/" ) {
+		return url.substring(0, url.length-1);
+	}
+	return url;
+};
 export default {
+	replaceUrlBackslashAtEnd,
 	getHeadersAuthorization,
 	setHeadersAuthorization,
 	themeLocalStorageAndState,

@@ -35,15 +35,21 @@ class Login extends Api {
 		this.setApiData<ICredential>(data);
 	}
 }
-
+class AboutMe extends Api {
+	constructor () {
+		super("aboutMe", METHODS.GET, "/api/about_me")
+	}
+}
 export default {
 	ComponentEntitlement,
 	MainApi,
+	AboutMe,
 	Login
 };
 
 export {
 	ComponentEntitlement,
 	MainApi,
+	AboutMe,
 	Login
 };

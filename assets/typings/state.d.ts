@@ -16,6 +16,7 @@ interface ICommonState {
     socialMedias:ISocialMedia[];
     notification:string|null;
     loading:boolean;
+    selectedNavigation?:INavigation;
 }
 interface IAdminState {
 

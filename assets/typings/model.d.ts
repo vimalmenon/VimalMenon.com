@@ -2,6 +2,9 @@ interface INavigation {
     name: string;
     url : string;
     title: string;
+    icon?:JSX.Element;
+    breadcrumbs?:INavigation[],
+    navigations?:INavigation[]
 }
 interface IHomeNavigation {
     name: string;

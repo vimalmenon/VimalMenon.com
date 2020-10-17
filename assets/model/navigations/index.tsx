@@ -1,3 +1,7 @@
+import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
+import HomeIcon from "@material-ui/icons/Home";
+import React from "react";
+
 const home:INavigation = {
 	name: "Home",
 	url : "/",
@@ -9,10 +13,43 @@ const privacyPolicy:INavigation = {
 	title : "Privacy Policy | Vimal Menon",	
 };
 const admin:INavigation = {
-	name: "Admin",
-	url : "/admin",
-	title: "Admin | Vimal Menon"
+	name : "Admin",
+	icon : (<SupervisorAccountIcon />),
+	url : "/admin/admin",
+	title : "Admin | Dashboard | Vimal Menon",
+	breadcrumbs : [
+		{
+			name: "Admin",
+			url : "/admin",
+			title: "Dashboard | Vimal Menon",
+			icon: (<HomeIcon />),
+		},
+		{
+			name : "Admin",
+			icon : (<SupervisorAccountIcon />),
+			url : "/admin/admin",
+			title : "Admin | Dashboard | Vimal Menon",
+		}
+	]
 };
+const dashboard:INavigation = {
+	name: "Home",
+	url : "/admin",
+	title: "Dashboard | Vimal Menon",
+	icon: (<HomeIcon />),
+	navigations:[
+		admin
+	],
+	breadcrumbs : [
+		{
+			name : "Home",
+			url : "/admin",
+			title: "Admin | Vimal Menon",
+			icon : (<HomeIcon />)
+		}
+	]
+};
+
 const pageNotFound:INavigation = {
 	name: "PageNotFound",
 	url : "/page-not-found",
@@ -45,12 +82,15 @@ const footerNavigations : INavigation[] = [
 	tutorials,
 	privacyPolicy
 ];
-const adminNavigations:INavigation[] = [];
+const adminNavigations:INavigation[] = [
+	dashboard
+];
 const navigationByUrl:{[key:string]:INavigation} = {
 	[home.url]:home,
-	[admin.url]:admin,
+	[dashboard.url]:dashboard,
 	[privacyPolicy.url]:privacyPolicy,
 	[tutorials.url]:tutorials,
+	[admin.url]:admin
 };
 export default {
 	footerNavigations,
