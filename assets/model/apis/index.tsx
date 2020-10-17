@@ -1,3 +1,4 @@
+import admin from "./admin";
 import{METHODS} from "./helper";
 
 
@@ -37,19 +38,30 @@ class Login extends Api {
 }
 class AboutMe extends Api {
 	constructor () {
-		super("aboutMe", METHODS.GET, "/api/about_me")
+		super("aboutMe", METHODS.GET, "/api/about_me");
+	}
+}
+
+class SaveContact extends Api {
+	constructor(data) {
+		super("saveContact", METHODS.POST, "/api/save_contact");
+		this.setApiData<IContact>(data);
 	}
 }
 export default {
 	ComponentEntitlement,
-	MainApi,
+	SaveContact,
 	AboutMe,
-	Login
+	MainApi,
+	Login,
+	admin,
 };
 
 export {
 	ComponentEntitlement,
-	MainApi,
+	SaveContact,
 	AboutMe,
-	Login
+	MainApi,
+	Login,
+	admin,
 };

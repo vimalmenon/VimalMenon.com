@@ -9,3 +9,12 @@ interface ISocialMedia {
 interface IMain {
     socialMedias: ISocialMedia[]
 }
+interface IAboutMeDetail {
+    title:string;
+    subTitle:string;
+    details:string[];
+}
+interface IAboutMe {
+    videoLink:string;
+    detail:IAboutMeDetail;
+}

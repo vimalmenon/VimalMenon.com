@@ -51,3 +51,6 @@ interface ICredential {
 	username:string;
 	password:string;
 }
+interface IContact {
+    
+}

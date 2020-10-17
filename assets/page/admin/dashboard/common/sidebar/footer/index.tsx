@@ -1,6 +1,6 @@
 import React from "react";
 
-import {APP_VERSION} from "const"
+import {APP_VERSION} from "const";
 
 const Footer = () => {
 	return (

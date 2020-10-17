@@ -4,6 +4,8 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 
 import Container from "../../common/container";
 
+import Form from "./form";
+
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
 		root : {
@@ -18,6 +20,7 @@ const Contact:React.FC = () => {
 	return (
 		<Container>
 			<div className={classes.root}>
+				<Form />
 				This is contact
 			</div>
 		</Container>
