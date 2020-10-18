@@ -52,5 +52,10 @@ interface ICredential {
 	password:string;
 }
 interface IContact {
-    
+    name:string;
+    emailAddress:string;
+    subject:string;
+    message:string;
+}
+interface IContactText {
 }

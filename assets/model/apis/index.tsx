@@ -43,13 +43,19 @@ class AboutMe extends Api {
 }
 
 class SaveContact extends Api {
-	constructor(data) {
+	constructor(data:IContact) {
 		super("saveContact", METHODS.POST, "/api/save_contact");
 		this.setApiData<IContact>(data);
 	}
 }
+class GetContactUs extends Api {
+	constructor() {
+		super("getContactUs", METHODS.GET, "/api/contact_us");
+	}
+}
 export default {
 	ComponentEntitlement,
+	GetContactUs,
 	SaveContact,
 	AboutMe,
 	MainApi,
@@ -59,6 +65,7 @@ export default {
 
 export {
 	ComponentEntitlement,
+	GetContactUs,
 	SaveContact,
 	AboutMe,
 	MainApi,
