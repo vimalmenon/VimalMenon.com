@@ -18,3 +18,5 @@ interface IAboutMe {
     videoLink:string;
     detail:IAboutMeDetail;
 }
+interface IContactText {
+}

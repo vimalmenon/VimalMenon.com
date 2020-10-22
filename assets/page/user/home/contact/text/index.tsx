@@ -4,15 +4,23 @@ import {apis} from "model";
 import {ApiCaller} from "utility";
 
 
-const Text = () => {
-	const [contact, setContact] = React.useState(null);
+const Text:React.FC = () => {
+	const [contact, setContact] = React.useState<IContactText|null>(null);
 	React.useEffect(() => {
-		new ApiCaller(new apis.GetContactUs())
+		new ApiCaller<IContactText>(new apis.GetContactUs())
+			.getPromise()
+			.then((data) => {
+				setContact(data);
+			});
 	}, []);
-	return(
-		<section>
-		</section>
-	);
+	if (contact){
+		return(
+			<section>
+			</section>
+		);
+	}
+	return null;
+	
 };
 
 export default Text;

@@ -57,5 +57,3 @@ interface IContact {
     subject:string;
     message:string;
 }
-interface IContactText {
-}
